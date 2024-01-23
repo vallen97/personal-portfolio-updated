@@ -66,7 +66,7 @@ export default function SortAlgorithm() {
         ))}
       </div>
       <div className="px-5">
-        <label className="block mb-2 text-sm font-medium text-materialUI-LightOnPrimaryContainer bg-materialUI-LightPrimaryContainer dark:text-materialUI-DarkOnPrimaryContainer dark:bg-materialUI-DarkPrimaryContainer">
+        <label className="block mb-2 text-sm font-medium text-materialUI-LightPrimaryContainer bg-materialUI-LightOnPrimaryContainer dark:text-materialUI-DarkOnPrimaryContainer dark:bg-materialUI-DarkPrimaryContainer">
           Current Speed: {Math.pow(Number(currentSpeed), 3)} ms
         </label>
         <input

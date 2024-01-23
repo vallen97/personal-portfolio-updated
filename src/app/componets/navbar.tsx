@@ -85,12 +85,12 @@ export const Navbar: React.FC<navbarProps> = ({}) => {
           >
             Sort Algorithms
           </Link>
-          <Link
+          {/* <Link
             href="Pathfinding"
             className="hover:font-bold hover:text-materialUI-LightOnSecondary dark:hover:text-materialUI-DarkTertiary text-materialUI-LightOnPrimary dark:text-materialUI-DarkOnPrimary p-1 block mt-4 lg:inline-block lg:mt-0  mr-4"
           >
             Path Finding
-          </Link>
+          </Link> */}
           <Link
             href="SnakeAI"
             className="hover:font-bold hover:text-materialUI-LightOnSecondary dark:hover:text-materialUI-DarkTertiary text-materialUI-LightOnPrimary dark:text-materialUI-DarkOnPrimary p-1 block mt-4 lg:inline-block lg:mt-0  mr-4"

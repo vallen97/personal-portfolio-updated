@@ -53,11 +53,9 @@ export const Card: React.FC<cardProps> = (props) => {
     button = <Link href={props.buttonLink}>{props.buttonTitle}</Link>;
     // button = <Link href="/">Home</Link>;
   }
-  // #carousel-status {
-  //   color: rgb(0, 0, 0);
-  // }
+
   return (
-    <div className="bg-materialUI-LightOnBackground dark:bg-materialUI-DarkOnBackground border-materialUI-LightOnSurfaceVariant dark:border-materialUI-DarkOnSurfaceVariant max-w-sm rounded overflow-hidden shadow-lg border-2 border-sky-500 min-h-[475px]">
+    <div className="bg-materialUI-LightOnBackground dark:bg-materialUI-DarkOnBackground border-materialUI-LightOnSurfaceVariant dark:border-materialUI-DarkOnSurfaceVariant max-w-sm rounded overflow-hidden shadow-lg border-2 min-h-[475px]">
       <div className="mt-4">
         <ImageSlider slides={imgArrays} />
       </div>
@@ -83,7 +81,7 @@ export const Card: React.FC<cardProps> = (props) => {
       <div>
         <button
           id="cardButton"
-          className="bg-materialUI-LightOnPrimaryContainer dark:bg-materialUI-DarkPrimaryContainer text-materialUI-LightPrimaryContainer dark:text-materialUI-DarkPrimaryContainer  bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded "
+          className="bg-materialUI-LightOnPrimaryContainer dark:bg-materialUI-DarkPrimaryContainer text-materialUI-LightPrimaryContainer dark:text-materialUI-DarkPrimaryContainer  bg-transparent hover:bg-blue-500  font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded "
         >
           {button}
         </button>
