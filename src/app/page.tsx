@@ -1,113 +1,104 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import React, { useState } from "react";
+
+import Card from "../app/componets/card";
+
+import { cardTypes } from "../app/types/cardTypes";
+import Navbar from "./componets/navbar";
+
+export default function HomePage() {
+  let [projects, setProjects] = useState(new Array<cardTypes.HomeCard>());
+
+  function initalizeProjects() {
+    let all: Array<cardTypes.HomeCard> = [
+      {
+        imageURKIDs: 0,
+        imageAlt: "Song Comparison app Images",
+        cardTitle: "Song Comparison",
+        cardDescription:
+          "This application was made in python and it compare the lyrics of two different songs. When searching for a song, the user can either search for an artist, song, or partial lyrics, and the top ten results will be returned to the user. Once both songs are selected a graph is made for the most common words used by either songs. Those lyrics are filter through a most common words in the English language(i.e. at, the, was). Finally, a summary of both lyrics are made, which is determined to be the most important part of the lyrics.",
+        buttonTitle: "View Project",
+        buttonLink: "https://github.com/vallen97/song_comparison",
+        externalLink: true,
+      },
+      {
+        imageURKIDs: 1,
+        imageAlt: "Local Online Game images",
+        cardTitle: "Local Online Game",
+        cardDescription:
+          "This project is a game made with the Unity engine. The core mechanics are simple each player has three lives and can move either, up, left, or right. The purpose of this game is to have local online multiplayer, which up to four players can play together. There is a host which each user needs to connect to, each player is color coated with a different color. Once there is only one player left, they would be the winner, and everyone is sent back to the main menu.",
+        buttonTitle: "View Project",
+        buttonLink: "https://github.com/vallen97/local_online_game",
+        externalLink: true,
+      },
+      {
+        imageURKIDs: 2,
+        imageAlt: "Snake AI images",
+        cardTitle: "Snake AI",
+        cardDescription:
+          "This application is a snake game that uses machine learning to play the game.",
+        buttonTitle: "View Snake AI",
+        buttonLink: "/SnakeAI",
+        externalLink: false,
+      },
+      {
+        imageURKIDs: 3,
+        imageAlt: "Sorting Algorithms Images",
+        cardTitle: "Visualizing Sorting Algorithms",
+        cardDescription:
+          "This application is used to visualize different sorting algorithms",
+        buttonTitle: "Start Visualizing",
+        buttonLink: "/SortAlgorithm",
+        externalLink: false,
+      },
+      {
+        imageURKIDs: 4,
+        imageAlt: "Bird AI images",
+        cardTitle: "Flappy Birds AI",
+        cardDescription:
+          "This application is the flappy birds game that uses machine learning to play",
+        buttonTitle: "View Flappy Birds AI",
+        buttonLink: "/FlappyBirds",
+        externalLink: false,
+      },
+      {
+        imageURKIDs: 5,
+        imageAlt: "Song Request app images",
+        cardTitle: "Song Requesting",
+        cardDescription:
+          "This app is for a preformer that takes song requests, and it give them the ability to create, read, and delete submissions",
+        buttonTitle: "View Song Request App",
+        buttonLink: "https://song-request-t3.vercel.app/",
+        externalLink: true,
+      },
+    ];
+
+    setProjects(all);
+  }
+
+  React.useMemo(() => initalizeProjects(), []);
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className="px-8">
+      <Navbar />
+      <main className="justify-center place-content-center  flex-col mt-3">
+        <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 sm:place-items-center ">
+          {projects.map((data: any, index: number) => (
+            <React.Fragment key={index.toString()}>
+              <Card
+                carouselImages={data.imageURKIDs}
+                imageAlt={data.imageAlt + index.toString()}
+                cardTitle={data.cardTitle}
+                cardDescription={data.cardDescription}
+                buttonTitle={data.buttonTitle}
+                buttonLink={data.buttonLink}
+                externalLink={data.externalLink}
+              />
+            </React.Fragment>
+          ))}
         </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      </main>
+    </div>
   );
 }
