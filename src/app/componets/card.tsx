@@ -56,10 +56,9 @@ export const Card: React.FC<cardProps> = (props) => {
 
   return (
     <div className="mt-4 bg-materialUI-LightPrimary dark:bg-materialUI-DarkOnBackground border-materialUI-LightOnSurfaceVariant dark:border-materialUI-DarkOnSurfaceVariant max-w-sm rounded overflow-hidden shadow-lg border-2 border-sky-500 min-h-[475px]">
-      <div className="w-full h-auto">
+      <div className="m-3 " style={{ height: 225, backgroundColor: "black" }}>
         <ImageSlider slides={imgArrays} />
       </div>
-
       <div className="px-6 py-4">
         <div className=" text-materialUI-LightBackground dark:text-materialUI-DarkBackground font-bold text-xl mb-2">
           {props.cardTitle}
@@ -69,13 +68,16 @@ export const Card: React.FC<cardProps> = (props) => {
             ? props.cardDescription
             : `${props.cardDescription.substring(0, 125)}`}
           <br></br>
-          <button
-            className=" bg-materialUI-LightOnPrimaryContainer dark:bg-materialUI-DarkPrimaryContainer text-materialUI-LightPrimaryContainer dark:text-materialUI-DarkPrimaryContainer font-semibold rounded shadow"
-            onClick={() => setShowMore(!showMore)}
-          >
-            {showMore ? " Show less" : " Show more"}
-          </button>
-          {/* {props.cardDescription} */}
+          {props.cardDescription.length > 125 ? (
+            <button
+              className=" bg-materialUI-LightOnPrimaryContainer dark:bg-materialUI-DarkPrimaryContainer text-materialUI-LightPrimaryContainer dark:text-materialUI-DarkPrimaryContainer font-semibold rounded shadow"
+              onClick={() => setShowMore(!showMore)}
+            >
+              {showMore ? " Show less" : " Show more"}
+            </button>
+          ) : (
+            <></>
+          )}
         </p>
       </div>
       <div>
