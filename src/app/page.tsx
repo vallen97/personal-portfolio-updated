@@ -80,7 +80,7 @@ export default function HomePage() {
   React.useMemo(() => initalizeProjects(), []);
 
   return (
-    <div className="px-8">
+    <div className="px-1">
       <Navbar />
       <main className="justify-center place-content-center  flex-col mt-3">
         <div className="h-auto grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 sm:place-items-center ">

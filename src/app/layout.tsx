@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { ThemeModeScript } from "flowbite-react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,11 +17,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <ThemeModeScript />
+      </head>
       <body
         className="flex flex-col h-screen justify-between bg-materialUI-LightOnPrimary dark:bg-materialUI-DarkOnPrimary"
         style={{ height: "-webkit-fill-available" }}
       >
-        <div className="py-2 mb-auto bg-materialUI-LightOnPrimary dark:bg-materialUI-DarkOnPrimary ">
+        <div className="pt-1 pb-2 mb-auto bg-materialUI-LightOnPrimary dark:bg-materialUI-DarkOnPrimary ">
           {children}
         </div>
       </body>

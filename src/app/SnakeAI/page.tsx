@@ -3,7 +3,7 @@
 import React, {
   useEffect as UseEffect,
   useRef as UseRef,
-  useState as UseState,
+useState as UseState,
 } from "react";
 import { Game } from "../utils/snakegame/game";
 import Dropdown from "../componets/dropdown";
