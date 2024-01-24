@@ -55,8 +55,8 @@ export const Card: React.FC<cardProps> = (props) => {
   }
 
   return (
-    <div className="bg-materialUI-LightOnBackground dark:bg-materialUI-DarkOnBackground border-materialUI-LightOnSurfaceVariant dark:border-materialUI-DarkOnSurfaceVariant max-w-sm rounded overflow-hidden shadow-lg border-2 min-h-[475px]">
-      <div className="mt-4">
+    <div className="mt-4 bg-materialUI-LightPrimary dark:bg-materialUI-DarkOnBackground border-materialUI-LightOnSurfaceVariant dark:border-materialUI-DarkOnSurfaceVariant max-w-sm rounded overflow-hidden shadow-lg border-2 border-sky-500 min-h-[475px]">
+      <div className="w-full h-auto">
         <ImageSlider slides={imgArrays} />
       </div>
 

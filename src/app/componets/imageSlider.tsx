@@ -8,7 +8,7 @@ interface carouselProps {
 // If you want to use your own Selectors look up the Advancaed Story book examples
 export const ImageSlider: React.FC<carouselProps> = (props) => {
   return (
-    <div className="h-56 sm:h-64 xl:h-80 2xl:h-96">
+    <div className="w-full h-auto">
       <Carousel>
         {props.slides.map((slide: any, index: any) => {
           if (slide.image) {
