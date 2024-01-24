@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { Carousel } from "flowbite-react";
 import Image from "next/image";
@@ -11,6 +12,7 @@ export const ImageSlider: React.FC<carouselProps> = (props) => {
   return (
     <Carousel
       slideInterval={5000}
+      pauseOnHover
       id={"id" + props.slides[0].image}
       style={{ height: 225 }}
     >

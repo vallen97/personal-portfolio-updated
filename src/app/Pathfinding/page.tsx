@@ -1,6 +1,5 @@
 "use client";
 import React, { Fragment, useEffect, useRef, useState } from "react";
-import Dropdown from "../../src/componets/dropdown";
 
 export default function page() {
   let canvasRef: any = useRef();
