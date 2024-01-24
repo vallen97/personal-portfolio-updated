@@ -1,19 +1,23 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, {
+  useEffect as UseEffect,
+  useRef as UseRef,
+  useState as UseState,
+} from "react";
 import Dropdown from "../componets/dropdown";
 import { flappyGame as game } from "../utils/flappybirdgame/flappGame";
 
 export default function page() {
   // export const page: React.FC<any> = ({}) => {
-  let [flappyBirdGame, setFlappyBirdGame] = useState<any>(new (class {})());
+  let [flappyBirdGame, setFlappyBirdGame] = UseState<any>(new (class {})());
 
-  let labelCurrentGen: any = useRef();
-  let labelCurrentScoreo: any = useRef();
-  let labelCurrentBirdsAlive: any = useRef();
+  let labelCurrentGen: any = UseRef();
+  let labelCurrentScoreo: any = UseRef();
+  let labelCurrentBirdsAlive: any = UseRef();
 
-  let [isGameLoaded, setIsGameLoaded] = useState<boolean>(false);
+  let [isGameLoaded, setIsGameLoaded] = UseState<boolean>(false);
 
-  useEffect(() => {
+  UseEffect(() => {
     setFlappyBirdGame(
       game(
         labelCurrentGen.current,

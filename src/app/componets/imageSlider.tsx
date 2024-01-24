@@ -30,8 +30,8 @@ export const ImageSlider: React.FC<carouselProps> = (props) => {
           );
         } else {
           return (
-            <div style={{ height: 225 }}>
-              <img
+            <div key={index} style={{ height: 225 }}>
+              <Image
                 src="https://fakeimg.pl/800x451"
                 alt="..."
                 height={451}

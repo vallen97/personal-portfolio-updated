@@ -1,28 +1,32 @@
 "use client";
 // import { Menu, Transition } from "@headlessui/react";
-import React, { Fragment, useEffect, useRef, useState } from "react";
+import React, {
+  useEffect as UseEffect,
+  useRef as UseRef,
+  useState as UseState,
+} from "react";
 import { Game } from "../utils/snakegame/game";
 import Dropdown from "../componets/dropdown";
 import Navbar from "../componets/navbar";
 
 export default function page() {
   // export const page: React.FC<any> = ({}) => {
-  let sliderSpeedRef: any = useRef();
-  let sliderSnakeCountRef: any = useRef();
-  let canvasRef: any = useRef();
+  let sliderSpeedRef: any = UseRef();
+  let sliderSnakeCountRef: any = UseRef();
+  let canvasRef: any = UseRef();
 
-  let labelGen: any = useRef();
-  let labelSnakeScore: any = useRef();
-  let labelSnakesAlive: any = useRef();
+  let labelGen: any = UseRef();
+  let labelSnakeScore: any = UseRef();
+  let labelSnakesAlive: any = UseRef();
 
-  let [currentSpeed, setCurrentSpeed] = useState(5);
-  let [numberOfSnakes, setNumberOfSnakes] = useState(5);
-  let [snakeGame, setSnakeGame] = useState<any>(new (class {})());
-  let [isGameLoaded, setIsGameLoaded] = useState<boolean>(false);
+  let [currentSpeed, setCurrentSpeed] = UseState(5);
+  let [numberOfSnakes, setNumberOfSnakes] = UseState(5);
+  let [snakeGame, setSnakeGame] = UseState<any>(new (class {})());
+  let [isGameLoaded, setIsGameLoaded] = UseState<boolean>(false);
 
   let ctx: any;
 
-  useEffect(() => {
+  UseEffect(() => {
     ctx = canvasRef.current.getContext("2d");
     ctx.fillStyle = "blue";
     ctx.fillRect(0, 0, canvasRef.current.width, canvasRef.current.height);
