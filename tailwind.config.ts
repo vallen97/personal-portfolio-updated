@@ -5,7 +5,8 @@ const config: Config = {
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./app/**/*.{js,ts,jsx,tsx}",
     "./src/componets/**/*.{js,ts,jsx,tsx}",
-  ],
+    'node_modules/flowbite-react/lib/esm/**/*.js'
+     ],
   darkMode: "class",
   theme: {
     extend: {},
