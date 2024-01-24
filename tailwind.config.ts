@@ -9,7 +9,6 @@ const config: Config = {
     "./pages/**/*.{ts,tsx}",
     "./public/**/*.html",
   ],
-  darkMode: "class",
   theme: {
     extend: {},
     colors: {
