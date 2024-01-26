@@ -19,6 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <ThemeModeScript />
+        <title>Vaughn Allen Portfolio</title>
       </head>
       <body
         className="flex flex-col h-screen justify-between bg-materialUI-LightOnPrimary dark:bg-materialUI-DarkOnPrimary"
