@@ -6,6 +6,7 @@ import React, {
 } from "react";
 import Dropdown from "../componets/dropdown";
 import { flappyGame as game } from "../utils/flappybirdgame/flappGame";
+import { Navbar } from "../componets/navbar";
 
 export default function page() {
   // export const page: React.FC<any> = ({}) => {
@@ -29,6 +30,7 @@ export default function page() {
 
   return (
     <div>
+      <Navbar />
       <div className="bg-black py-4 grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 place-items-center">
         {isGameLoaded ? (
           <>
