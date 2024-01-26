@@ -396,7 +396,7 @@ function create_pipe() {
   let top_pipe_img: HTMLImageElement = document.createElement("img");
   top_pipe_img.className = "pipe_sprite";
   top_pipe_img.id = "Top_Pipe";
-  top_pipe_img.src = "/assets/flappbirds/green.png";
+  top_pipe_img.src = "/static/flappbirds/green.png";
 
   // pipe_sprite_inv.style.top = pipe_posi - 70 + 'vh';
   top_pipe_img.style.top = "0px";
@@ -416,7 +416,7 @@ function create_pipe() {
   let bottom_pipe_img: HTMLImageElement = document.createElement("img");
   bottom_pipe_img.className = "pipe_sprite";
   bottom_pipe_img.id = "Bottom_Pipe";
-  bottom_pipe_img.src = "/assets/flappbirds/green.png";
+  bottom_pipe_img.src = "/static/flappbirds/green.png";
 
   // Top 993px
 
@@ -593,7 +593,8 @@ async function loadBirdModel(type: number, birdJSON?: any) {
     case 1:
       // load model from website
       try {
-        model = await tf.loadLayersModel("/assets/flappbirds/best_bird.json");
+        model = await tf.loadLayersModel("/static/flappbirds/best_bird.json");
+        console.log("Best Bird loaded from website");
         isLoaded = true;
         isWebsiteModel = true;
         loadBest = true;

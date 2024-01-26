@@ -186,9 +186,9 @@ export class Bird {
       typeof this.bird_props == "undefined"
     )
       return;
-
-    let offSetTop = this.bird_element.offsetTop;
-
+    let offSetTop: any;
+    if (this.bird_element.offsetTop) offSetTop = this.bird_element.offsetTop;
+    else offSetTop = 19;
     if (offSetTop > 0) {
       if (offSetTop + this.bird_element.offsetHeight < this.background.height) {
         return false;
@@ -265,7 +265,7 @@ export class Bird {
       .getBoundingClientRect();
 
     let img = document.createElement("img");
-    img.src = "/assets/flappbirds/flappy-bird.png";
+    img.src = "/static/flappbirds/flappy-bird.png";
     img.className = "bird";
 
     img.alt = "bird-img";
